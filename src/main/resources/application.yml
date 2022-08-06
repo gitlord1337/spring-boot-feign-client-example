@@ -1,0 +1,23 @@
+feign:
+  client:
+    config:
+      agify:
+        connectTimeout: 1000
+        readTimeout: 1337
+        loggerLevel: full
+        errorDecoder: org.code1337.feignclient.ExampleErrorDecoder
+        requestInterceptors:
+          - org.code1337.feignclient.ExampleRequestInterceptor
+
+  # Compression
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+
+# Logging
+logging:
+  level:
+    com.arch:
+      ExchangeRateClient: DEBUG
